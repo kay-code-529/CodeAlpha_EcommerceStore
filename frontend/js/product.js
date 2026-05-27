@@ -18,7 +18,8 @@ async function loadProduct() {
 
   detail.innerHTML = `
     <div style="display:flex; gap:40px; flex-wrap:wrap; padding:32px">
-      <img src="${product.image_url}"
+      <img src="${product.image_url || ''}" alt="${product.name}"
+        onerror="this.onerror=null; this.src='https://placehold.co/350x350?text=No+Image'"
         style="width:350px; height:350px; object-fit:cover; border-radius:12px"/>
       <div>
         <h2>${product.name}</h2>
